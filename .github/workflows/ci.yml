@@ -1,0 +1,23 @@
+name: test environment build
+
+on:
+  push:
+    branches:
+      - beacon-2690-testing/beacon-2690
+
+jobs:
+  deploy_panda:
+    environment: dev
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set env name
+        uses: ./.github/actions/name
+        with:
+          BRANCH_REF: ${{ github.head_ref || github.ref_name }}
+      - name: Testing
+        run: |
+          env | grep BRANCH

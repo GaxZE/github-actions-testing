@@ -1,0 +1,27 @@
+name: "Set environment name"
+description: "set environment name based on type of pull request"
+inputs:
+  BRANCH_REF:
+    description: "Branch Reference"
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Set environment name
+      id: set_env_name
+      run: |
+        BRANCH_NAME="${{ inputs.BRANCH_REF }}"
+        ENV_NAME=$(echo $BRANCH_NAME | grep -io "^[Bb][Ee][Aa][Cc][Oo][Nn]-[0-9]*"  | tr '[:upper:]' '[:lower:]')
+        FRONTEND=az-$(echo $ENV_NAME)
+
+        if [[ $BRANCH_NAME =~ ^[Bb][Ee][Aa][Cc][Oo][Nn]-[0-9]+-.*\/[Bb][Ee][Aa][Cc][Oo][Nn]-[0-9]+$ ]]; then
+          # multi repo PR.
+          BACKEND_NAME=ai_$(echo $BRANCH_NAME | grep -io "\/[Bb][Ee][Aa][Cc][Oo][Nn]-[0-9]*" | cut -d "/" -f2 | tr '-' '_' | tr '[:upper:]' '[:lower:]')
+        else
+          # single repo PR.
+          BACKEND_NAME=az_$(echo $BRANCH_NAME | grep -io "^[Bb][Ee][Aa][Cc][Oo][Nn]-[0-9]*" | tr '-' '_' | tr '[:upper:]' '[:lower:]')
+        fi
+        echo "BACKEND_NAME=$BACKEND_NAME" >> $GITHUB_ENV
+        echo "FRONTEND_NAME=$FRONTEND" >> $GITHUB_ENV
+        echo "ENV_NAME=$ENV_NAME" >> $GITHUB_ENV
+      shell: bash
