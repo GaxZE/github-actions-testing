@@ -4,11 +4,14 @@ on:
   pull_request:
     types:
       - closed
-    branches: ["beacon-*"]
+    branches:
+      - main
 
 jobs:
-  one:
+  two:
     runs-on: ubuntu-latest
     steps:
       - name: Testing
         run: echo Destroy
+      - name: Testing again
+        run: echo "Destroy more"
