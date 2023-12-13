@@ -1,11 +1,12 @@
-name: teardown
+name: additional
 
 on:
-  pull_request:
-    types:
-      - closed
+  workflow_run:
+    workflows: ["ci"]
     branches:
-      - main
+      - beacon-1234
+    types:
+      - completed
 
 jobs:
   two:
