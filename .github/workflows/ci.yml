@@ -7,7 +7,7 @@ on:
       - reopened
       - synchronize
     branches:
-      - beacon-123
+      - main
 
 jobs:
   one:

@@ -4,7 +4,8 @@ on:
   pull_request:
     types:
       - closed
-    branches: ["beacon-*"]
+    branches:
+      - main
 
 jobs:
   two:
