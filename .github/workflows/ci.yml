@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Testing
-        run: echo Build
+        run: echo Building
