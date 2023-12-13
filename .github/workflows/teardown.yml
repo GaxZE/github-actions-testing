@@ -1,4 +1,4 @@
-name: tear down zoo
+name: teardown
 
 on:
   pull_request:

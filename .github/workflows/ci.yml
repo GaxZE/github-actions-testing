@@ -1,4 +1,4 @@
-name: test environment build
+name: ci
 
 on:
   pull_request:
