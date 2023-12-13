@@ -7,7 +7,7 @@ on:
     branches: ["beacon-*"]
 
 jobs:
-  one:
+  two:
     runs-on: ubuntu-latest
     steps:
       - name: Testing
