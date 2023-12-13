@@ -1,7 +1,7 @@
 name: test environment build
 
 on:
-  push:
+  pull_request:
     branches:
       - beacon-2690-single-repo-pr
 
@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Testing
-        run: echo Building
+        run: echo Building again
