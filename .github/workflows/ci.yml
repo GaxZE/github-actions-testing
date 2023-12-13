@@ -7,7 +7,7 @@ on:
       - reopened
       - synchronize
     branches:
-      - beacon-2690-single-repo-pr
+      - beacon-*
 
 jobs:
   one:

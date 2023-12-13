@@ -5,7 +5,7 @@ on:
     types:
       - closed
     branches:
-      - beacon-2690-single-repo-pr
+      - beacon-*
 
 jobs:
   one:
