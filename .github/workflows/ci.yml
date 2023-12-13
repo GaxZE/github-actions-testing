@@ -6,12 +6,11 @@ on:
       - opened
       - reopened
       - synchronize
-    branches:
-      - beacon-*
+    branches: ["beacon-*"]
 
 jobs:
   one:
     runs-on: ubuntu-latest
     steps:
       - name: Testing
-        run: echo Building again again
+        run: echo Building again again again?
