@@ -12,3 +12,5 @@ jobs:
     steps:
       - name: Testing
         run: echo Destroy
+      - name: Testing again
+        run: echo "Destroy more"
