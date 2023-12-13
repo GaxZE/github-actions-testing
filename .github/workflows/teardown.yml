@@ -6,7 +6,8 @@ on:
       - beacon-*
   workflow_run:
     workflows: [ci]
-    branches: [beacon-54321]
+    branches:
+      - beacon-*
     types: [completed]
 
 jobs:
