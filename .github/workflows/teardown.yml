@@ -1,9 +1,6 @@
 name: additional
 
 on:
-  pull_request:
-    branches:
-      - beacon-*
   workflow_run:
     workflows: [ci]
     branches:
