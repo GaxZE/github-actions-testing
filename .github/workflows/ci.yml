@@ -6,7 +6,8 @@ on:
       - opened
       - reopened
       - synchronize
-    branches: ["beacon-*"]
+    branches:
+      - beacon-123
 
 jobs:
   one:
