@@ -7,11 +7,11 @@ on:
       - reopened
       - synchronize
     branches:
-      - beacon-2690-single-repo-pr
+      - beacon-*
 
 jobs:
   one:
     runs-on: ubuntu-latest
     steps:
       - name: Testing
-        run: echo Building again
+        run: echo Building again again
