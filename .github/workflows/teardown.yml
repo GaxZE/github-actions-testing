@@ -3,6 +3,7 @@ name: additional
 on:
   workflow_run:
     workflows: [ci]
+    branches: [beacon-54321]
     types: [completed]
 
 jobs:
