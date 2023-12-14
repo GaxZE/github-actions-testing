@@ -3,11 +3,12 @@ name: ci
 on:
   workflow_dispatch:
     inputs:
+      which_panda:
+        description: "Please enter a aws-infrastructure branch to select a panda to link with your FE apps."
       app:
         description: "Which app to deploy"
         type: choice
         options:
-          - Panda
           - Rhino
           - Puma
 
