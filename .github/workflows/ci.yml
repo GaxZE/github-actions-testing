@@ -7,7 +7,6 @@ on:
         description: "Which app to deploy"
         type: choice
         options:
-          - Panda
           - Rhino
           - Puma
 
