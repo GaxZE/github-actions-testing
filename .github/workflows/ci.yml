@@ -1,6 +1,16 @@
 name: ci
 
 on:
+  workflow_dispatch:
+    inputs:
+      app:
+        description: "Which app to deploy"
+        type: choice
+        options:
+          - Panda
+          - Rhino
+          - Puma
+
   pull_request:
     types:
       - opened
