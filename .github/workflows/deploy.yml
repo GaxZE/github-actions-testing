@@ -1,10 +1,12 @@
-name: teardown
+name: deploy
 
 on:
   workflow_dispatch:
     inputs:
       which_panda:
-        description: "Please enter a branch name to tear down a panda infrastructure."
+        description: "Please enter a Panda branch from aws-infrastructure to use as a data source."
+    branches:
+      - beacon-*
 
 jobs:
   two:
