@@ -1,28 +1,15 @@
 name: ci
 
 on:
-  workflow_dispatch:
-    inputs:
-      which_panda:
-        description: "Please enter a aws-infrastructure branch to select a panda to link with your FE apps."
-      app:
-        description: "Which app to deploy"
-        type: choice
-        options:
-          - Rhino
-          - Puma
-
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
+  workflow_run:
+    workflows: ["deploy"]
     branches:
-      - main
+      - beacon-*
+    types: [completed]
 
 jobs:
   one:
     runs-on: ubuntu-latest
     steps:
       - name: Testing
-        run: echo Building again again again?
+        run: echo CI
